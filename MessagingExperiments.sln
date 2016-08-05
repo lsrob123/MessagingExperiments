@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestResponse", "RequestR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestResponse.Test", "RequestResponse.Test\RequestResponse.Test.csproj", "{886346D7-E527-46E6-9D2F-1B7B5F2F0D41}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RequestResponsePattern", "RequestResponsePattern", "{A8D728F7-DF87-4B80-A66D-A85F0CCF56F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SignalR", "SignalR", "{6789708E-7602-4F75-BD25-F35CB7307276}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRApp.Web", "SignalRApp.Web\SignalRApp.Web.csproj", "{10DDA30A-61F6-4FF8-8473-A1CF8B32EBE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +27,17 @@ Global
 		{886346D7-E527-46E6-9D2F-1B7B5F2F0D41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{886346D7-E527-46E6-9D2F-1B7B5F2F0D41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{886346D7-E527-46E6-9D2F-1B7B5F2F0D41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10DDA30A-61F6-4FF8-8473-A1CF8B32EBE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10DDA30A-61F6-4FF8-8473-A1CF8B32EBE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10DDA30A-61F6-4FF8-8473-A1CF8B32EBE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10DDA30A-61F6-4FF8-8473-A1CF8B32EBE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2A12A5D3-EFED-4A91-B182-166B34FA041E} = {A8D728F7-DF87-4B80-A66D-A85F0CCF56F7}
+		{886346D7-E527-46E6-9D2F-1B7B5F2F0D41} = {A8D728F7-DF87-4B80-A66D-A85F0CCF56F7}
+		{10DDA30A-61F6-4FF8-8473-A1CF8B32EBE0} = {6789708E-7602-4F75-BD25-F35CB7307276}
 	EndGlobalSection
 EndGlobal
