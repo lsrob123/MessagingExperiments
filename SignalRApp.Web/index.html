@@ -19,6 +19,9 @@
 </div>
 <script type="text/javascript">
      
+    function join(chatHub) {
+        chatHub.server.join("TestGroup");
+    }
 
     function send(chatHub) {
         chatHub.server.send("TestGroup", $("#txtMessage").val());
@@ -34,8 +37,9 @@
         chat.client.showMessage = function(message) {
              showMessage(message);
         }
-//        chat.start().done(function () {
         $.connection.hub.start().done(function () {
+            join(chat);
+
             $('#btnSend').click(function () {
                 send(chat);
             });
