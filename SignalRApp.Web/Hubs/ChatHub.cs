@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.SignalR;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNet.SignalR;
 
 namespace SignalRApp.Web.Hubs
 {
@@ -9,9 +10,13 @@ namespace SignalRApp.Web.Hubs
             Clients.All.hello();
         }
 
-        public void Send(string groupName, string message)
+        public async Task Send(string groupName, string message)
         {
-            Clients.OthersInGroup(groupName).showMessage(message);
+            await Groups.Add(Context.ConnectionId, groupName);
+            var groupMessage = $"{groupName}: {message}";
+
+            Clients.OthersInGroup(groupName).showMessage(groupMessage);
+            Clients.Caller.showMessage($"Message [{groupMessage}] was sent");
         }
     }
 }

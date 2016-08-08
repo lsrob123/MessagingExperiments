@@ -5,17 +5,42 @@
 	<meta charset="utf-8" />
     <script src="Scripts/jquery-1.10.2.js"></script>
     <script src="Scripts/jquery.signalR-2.2.1.js"></script>
+    <script src="signalr/hubs"></script>
     <link href="Content/Site.css" rel="stylesheet" />
 </head>
 <body>
 <h1>Home Page</h1>
 <div id="divMain">
     <div class="spacing">
-        Message to be sent <input type="text" id="txtMessage" />
+        Message to be sent <input type="text" id="txtMessage"/>
     </div>
-    <button class="spacing" onclick="">Send</button>
-    <div class="spacing" id="divResponse"></div>
+    <button id="btnSend" class="spacing">Send</button>
     <div class="spacing" id="divMessage"></div>
 </div>
+<script type="text/javascript">
+     
+
+    function send(chatHub) {
+        chatHub.server.send("TestGroup", $("#txtMessage").val());
+    }
+
+    function showMessage(message) {
+        $("#divMessage").html(message);
+    }
+
+
+    $(function () {
+        var chat = $.connection.chatHub;
+        chat.client.showMessage = function(message) {
+             showMessage(message);
+        }
+//        chat.start().done(function () {
+        $.connection.hub.start().done(function () {
+            $('#btnSend').click(function () {
+                send(chat);
+            });
+        });
+    });
+</script>
 </body>
 </html>
